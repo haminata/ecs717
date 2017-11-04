@@ -1,3 +1,5 @@
+package lab02;
+
 public class Pattern {
     public static void main(String[] args) {
         int value = Integer.parseInt(args[0]);

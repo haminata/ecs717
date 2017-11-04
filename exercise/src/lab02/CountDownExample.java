@@ -1,3 +1,5 @@
+package lab02;
+
 /**
  * This is my first properly documented piece java code.
  * When the javadoc tool is run over this code, it will

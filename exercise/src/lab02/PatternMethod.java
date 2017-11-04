@@ -1,3 +1,5 @@
+package lab02;
+
 public class PatternMethod {
     public void printPattern (int n){
         for(int i = 0; i <= n; i = i + 1){
