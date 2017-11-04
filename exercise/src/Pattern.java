@@ -16,6 +16,6 @@ public class Pattern {
 /*
 if  i does not met the condition then is going to run the body of the loop
 j = the body is not gonna be executed the first round
-
+add a comment
 
  */
