@@ -47,6 +47,18 @@ public class Counter {
         count = 0;
         System.out.println("Counter Reset!");
     }
+
+    public void increase(int n){
+        count = count + n;
+    }
+
+    public void decrease(int n){
+        count = count - n;
+    }
+
+
+
+
    public String toString(){
         return "Counter(count: " + count + ", max: " + max + ")";
     }

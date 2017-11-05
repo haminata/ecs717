@@ -31,5 +31,19 @@ public class CounterTest {
 
         }
 
+        // start of increase overloading test
+        System.out.println();
+
+        count1.setCount(6);
+        count1.increase(3);
+        System.out.println(count1);
+
+        // start of decrease overloading test
+        System.out.println();
+
+        count1.setCount(6);
+        count1.decrease(3);
+        System.out.println(count1);
+
     }
 }
