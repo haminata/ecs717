@@ -29,19 +29,26 @@ public class Counter {
     }
 
     public void increase(){
-        this.count = this.count +1;
+        count = count + 1;
+        if (count >= max){
+            reset();
 
+        }
     }
 
     public void decrease(){
-        this.count = this.count -1;
+
+        if (count > 0) {
+            count = count - 1;
+        }
     }
 
     public void reset(){
-       this.count = 0;
+        count = 0;
         System.out.println("Counter Reset!");
     }
    public String toString(){
-        return ("Max value: " + this.max + ", " + "Count:" + count);
+        return "Counter(count: " + count + ", max: " + max + ")";
     }
-     }
+
+}
