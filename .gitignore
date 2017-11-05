@@ -12,6 +12,7 @@
 
 # Package Files #
 *.jar
+!circle.jar
 *.war
 *.ear
 *.zip
