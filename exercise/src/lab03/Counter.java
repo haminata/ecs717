@@ -60,7 +60,7 @@ public class Counter {
 
 
    public String toString(){
-        return "Counter(count: " + count + ", max: " + max + ")";
+        return "current count: " + count + "\n current max: " + max;
     }
 
 }
