@@ -8,21 +8,24 @@ public class Range {
         int start = Integer.parseInt(args[0]);
         int end = Integer.parseInt(args[1]);
 
-        System.out.println(start); // 5
-        System.out.println(end); // 9
+        //System.out.println(start); // 5
+        //System.out.println(end); // 9
 
-        int result = start;
-        result = result + 6;
-        result = result + 7;
-        result = result + 8;
-        result = result + 9;
-        System.out.println(result);
+        if (start > end){
+            System.out.println("Error reverse your input");
+        }
+//        int result = start;
+//        result = result + 6;
+//        result = result + 7;
+//        result = result + 8;
+//        result = result + 9;
+//        System.out.println(result);
 
+        int result = 0;
+        for (int i = start; i <= end; i++) {
+            result = i + result;
+            System.out.println(result);
 
-//        for (int i = start; i <= end; i++) {
-//          int  result = (i + start + end);
-//            System.out.println(result);
-//
-//        }
+        }
     }
 }
