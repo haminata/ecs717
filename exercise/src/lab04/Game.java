@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Game {
 
     public static void main(String[] args) {
+
         GameState g = new GameState(100);
         Scanner userInput = new Scanner(System.in);
 
@@ -19,7 +20,7 @@ public class Game {
             }else if(result > 0){
                 System.out.println("number is too large");
             }else{
-                System.out.println("number is less");
+                System.out.println("number is too low");
             }
         }
         System.out.println("You win! number of tries: " + g.getTries());
