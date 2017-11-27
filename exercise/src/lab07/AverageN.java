@@ -27,5 +27,7 @@ public class AverageN {
         int n = sc.nextInt();
         System.out.println("Insert numbers: " + n);
 
+        calAve(n);
+
     }
 }
