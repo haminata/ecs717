@@ -14,6 +14,7 @@ public class NamesBnG {
         //String searchGirl = args[1];
 
 
+        ArrayList<Record> boyRecords = new ArrayList<>();
         ArrayList<String> boyNames = new ArrayList<>();
         ArrayList<String> girlNames = new ArrayList<>();
 
@@ -30,31 +31,46 @@ public class NamesBnG {
         int lineNo  = 1;
         while (line != null){
             boyNames.add(line);
+            Record x = new Record(line, line);
+            boyRecords.add(x);
             //System.out.println("Reads the boy file: " + line);
             lineNo++;
             line = boyBufferReader.readLine();
         }
 
 
-        String searchName = findMatch(boyNames, searchBoy);
-        System.out.println("Name searching for is: " + searchName);
-
-        String[] words = searchName.split(" ");
-
-        Integer timesNameUsed = Integer.parseInt(words[1]);
+        //String searchName = findMatch(boyNames, searchBoy);
+       Record searchName1 = findMatch(boyRecords, searchBoy);
+//        System.out.println("Name searching for is: " + searchName);
+//
+//        String[] words = searchName.split(" ");
+//
+//
+//        Integer timesNameUsed = Integer.parseInt(words[1]);
 
 
         Integer ranking = findRanking(boyNames, searchBoy);
 
-        System.out.println(searchBoy + " is ranked " + ranking + " in popularity among boys with " + timesNameUsed);
+        System.out.println(searchBoy + " is ranked " + ranking + " in popularity among boys with " + searchName1.occurrences);
     }
 
 
-        public static String findMatch(ArrayList<String> arrayS, String search){
+//        public static String findMatch(ArrayList<String> arrayS, String search){
+//            for (int i = 0; i < arrayS.size(); i++) {
+//                String completeName = arrayS.get(i);
+//                if (completeName.startsWith(search)){
+//                    return completeName;
+//
+//                }
+//            }
+//             return null;
+//        }
+
+        public static Record findMatch(ArrayList<Record> arrayS, String search){
             for (int i = 0; i < arrayS.size(); i++) {
-                String completeName = arrayS.get(i);
-                if (completeName.startsWith(search)){
-                    return completeName;
+                Record record = arrayS.get(i);
+                if (record.name.equals(search)){
+                    return record;
 
                 }
             }
