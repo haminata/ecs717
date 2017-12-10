@@ -8,60 +8,61 @@ import java.awt.event.ActionListener;
 /**
  * Created by haminata on 03/12/2017.
  */
-public class ColourFrame extends JFrame {
+public class ColourFrame extends JFrame implements ActionListener {
+
+    private JRadioButton buttonRed = new JRadioButton("Red");
+    private JRadioButton buttonBlue = new JRadioButton("Blue");
+    private JRadioButton buttonGreen = new JRadioButton("Green");
+    private JPanel mainPanel = new JPanel();
 
     public ColourFrame() {
-        super();
-
-        JRadioButton buttonRed = new JRadioButton("Red");
-        JRadioButton buttonBlue = new JRadioButton("Blue");
-        JRadioButton buttonGreen = new JRadioButton("Green");
-
-        add(buttonRed);
-        add(buttonBlue);
-        add(buttonGreen);
-
-        setLayout(new FlowLayout());
+        this.setTitle("Radio Button Colour Frame");
+        this.setSize(250,100);
+        this.setVisible(true);
 
         ButtonGroup group = new ButtonGroup();
         group.add(buttonRed);
         group.add(buttonBlue);
         group.add(buttonGreen);
 
+        JPanel p1 = new JPanel(new FlowLayout());
+        p1.add(buttonRed);
+        p1.add(buttonBlue);
+        p1.add(buttonGreen);
 
 
-        ActionListener listener = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent event) {
+        Container contain = this.getContentPane();
 
-              if(event.getSource() == buttonBlue){
-                  changeBackgroundC(Color.blue);
+        contain.add(p1, BorderLayout.NORTH);
+        contain.add(mainPanel, BorderLayout.CENTER);
 
-              }else if(event.getSource() == buttonGreen){
-                  changeBackgroundC(Color.green);
+        buttonRed.addActionListener(this);
+        buttonBlue.addActionListener(this);
+        buttonGreen.addActionListener(this);
 
-              }else if(event.getSource() == buttonRed){
-                    changeBackgroundC(Color.red);
-                }
-
-            }
-        };
-
-        buttonRed.addActionListener(listener);
-        buttonBlue.addActionListener(listener);
-        buttonGreen.addActionListener(listener);
-
-        this.setTitle("Colour Frame");
-        this.setSize(250,100);
-        this.setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
     }
-    public void changeBackgroundC(Color newColour){
-        this.getContentPane().setBackground(newColour);
+    public void actionPerformed(ActionEvent event) {
+        JRadioButton source = (JRadioButton)event.getSource();
+        Color colour = getBackground();
+
+        if(source == buttonBlue)
+            colour = Color.blue;
+
+        else if(source == buttonGreen)
+            colour = Color.green;
+
+        else if(source == buttonRed)
+            colour = Color.red;
+
+        mainPanel.setBackground(colour);
+        repaint();
+
     }
 
     public static void main(String args[]){
-        ColourFrame myFrame = new ColourFrame();
+        new ColourFrame();
     }
 
 
