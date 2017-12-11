@@ -1,4 +1,5 @@
 package lab06.ex36;
+
 public class BlueTower extends Tower {
 	public BlueTower(){
 		super();
